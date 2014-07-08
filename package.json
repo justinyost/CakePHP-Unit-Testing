@@ -1,0 +1,30 @@
+{
+  "name": "loadsys-fairmount",
+  "description": "Fairmount internal app.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loadsys/Fairmount.git"
+  },
+  "scripts": {
+    "start": "grunt dev"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.5.2",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-ember-templates": "~0.4.8",
+    "grunt-karma": "~0.4.4",
+    "grunt-config": "~0.1.4",
+    "grunt-chauffeur": "~0.4.3",
+    "grunt-fabricate": "~0.1.2",
+    "grunt-focus": "~0.1.1",
+    "grunt-encase": "0.0.3",
+    "merge-recursive": "0.0.3"
+  }
+}

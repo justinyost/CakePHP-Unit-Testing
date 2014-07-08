@@ -1,0 +1,35 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+
+# Loadsys
+Lib/Cake
+backups/
+
+# Composer
+Vendor/*
+bin/
+Plugin/DebugKit
+Plugin/Migrations
+Plugin/BoostCake
+Plugin/Serializers
+
+# Vagrant + puphpet
+.vagrant
+Lib/puphpet/files/dot/ssh/id_rsa*
+Lib/puphpet/files/dot/ssh/insecure_private_key
+xhprof/
+phpmyadmin/
+
+# npm + grunt
+node_modules/
+#webroot/assets  # Either needs to be ignored and paired with a deploy step to generate assets, or generated assets need to be committed back to the repo so it's "always ready to go".
+# ignoring webroot/assets for now during development
+webroot/assets/

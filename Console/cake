@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+################################################################################
+#
+# Custom redirector to point to composer-installed `cake`
+#
+################################################################################
+
+DIR="$( cd -P "$( dirname "$0" )"/.. >/dev/null 2>&1 && pwd )"
+$DIR/Vendor/pear-pear.cakephp.org/CakePHP/bin/cake -app "$DIR" "$@"
+exit
