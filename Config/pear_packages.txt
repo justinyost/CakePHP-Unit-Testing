@@ -1,1 +1,1 @@
-pear.cakephp.org:cakephp/CakePHP_CodeSniffer
+pear.cakephp.org:cakephp/cakephp_CodeSniffer
