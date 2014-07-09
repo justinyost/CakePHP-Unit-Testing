@@ -5,16 +5,13 @@ language: php
 php:
   - 5.4
 
-# Node version
-node_js:
-  - "0.10"
 
 # Environment Variables to set
 env:
   global:
     - APP_ENV=travis
     # Contains a $GITHUB_TOKEN env var for use with composer to avoid API limits.
-    - secure: "X4d4viYBUyFqPblM1TOGU9L45lbBSkyMtT7DMc/8XvSXk9TkZl5aOXpReZlj193pvHP0ri3jqCI+Xa6qLzTBgrfE0hEMsSwbwSzLBsJ5ky53pihONlTfXDLS8pkhUmLfoaLeXhxi/ffTVEZGc09qbxvBPzaEZOWCPe4VzxHXTZQ="
+    - secure: "GskNShxJTSdczbddmPPIzKivDWn/YuaMFgr5UPSumPDirQQdbesRh/tQZNGiIaROXXnDs45wJCWT2ra8XdYBZouISXOoOZARQgz9JqUHAbkgtCbxa4qhp3ZwDymJMFd5eGvM99r9OCoSh2us+E2fhBb1+P5kvS6laB5TKYmwAX0="
 
 # Services to Enable
 services:
@@ -24,8 +21,6 @@ services:
 branches:
   # Blacklist these branches
   except:
-    - master
-    - staging
     - gh-pages
 
 # Before Installing Software/Dependencies Needed
@@ -34,13 +29,10 @@ before_install:
 # Install Software/Dependencies Needed
 install:
   - git submodule update --init --recursive
-  - composer config github-oauth.github.com $GITHUB_TOKEN
   - composer install --dev --no-interaction
   - ./bin/pear-install-deps
   - ./bin/set-owner
   - ./bin/set-configs "$APP_ENV"
-  - npm install -g grunt-cli
-  - npm install
 
 # Before the Test Script Runs
 before_script:
@@ -52,7 +44,6 @@ before_script:
 script:
   - sh -c "./bin/run-codesniffer y;"
   - ./bin/run-tests
-  - PHANTOMJS_BIN=phantomjs grunt test --verbose
 
 # After a Successful Build
 after_success:
@@ -72,6 +63,3 @@ notifications:
 #    on_failure: always
 #    on_success: always
 #    on_start: false
-
-# Github Private Key for an account that can read your private repos
-#source_key:
