@@ -1,7 +1,7 @@
 ---
 vagrantfile-local:
     vm:
-        hostname: fm-vagrant
+        hostname: cake-unit-testing-vagrant
         box: puphpet/ubuntu1204-x64
         box_url: puphpet/ubuntu1204-x64
         memory: '512'
@@ -64,7 +64,6 @@ server:
         - python
         - g++
         - make
-        - emacs
         - curl
         - zip
         - graphviz
