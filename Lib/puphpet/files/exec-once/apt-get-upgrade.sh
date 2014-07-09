@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Run apt-get upgrade once on initial provision if the OS is Ubuntu.
+exit 0
 if [ -n "$(command -v apt-get)" ]; then
 	echo " ## Running apt-get upgrade..."
 

@@ -12,7 +12,7 @@ Clone the skeleton project into a local folder.
 git clone git@github.com:loadsys/CakePHP-Skeleton.git /path/to/CakePHP-Skeleton
 composer install
 ```
-(The second line pulls a Cake core into `Vendor/cakephp/cakephp/` and the Loadsys shell scripts into the `bin/` directory.)
+(The second line pulls a Cake core into `Vendor/cakephp/cakephp/lib/` and the Loadsys shell scripts into the `bin/` directory.)
 
 Note that there are two composer config files in this project.
 
