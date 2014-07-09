@@ -2,7 +2,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-VAGRANT_CORE_FOLDER=$(echo "$1")
+# Normalize the path provided to us by vagrant. -bp
+VAGRANT_CORE_FOLDER="$( cd -P "$1" >/dev/null 2>&1 && pwd )";
 
 OS=$(/bin/bash "${VAGRANT_CORE_FOLDER}/shell/os-detect.sh" ID)
 CODENAME=$(/bin/bash "${VAGRANT_CORE_FOLDER}/shell/os-detect.sh" CODENAME)
