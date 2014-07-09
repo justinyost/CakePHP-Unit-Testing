@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('title');
 		echo $this->Form->input('text');
+		echo $this->Form->input('is_published');
 		echo $this->Form->input('Tag');
 	?>
 	</fieldset>

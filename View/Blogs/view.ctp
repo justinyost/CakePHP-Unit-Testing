@@ -16,6 +16,11 @@
 			<?php echo h($blog['Blog']['text']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Is Published'); ?></dt>
+		<dd>
+			<?php echo h($blog['Blog']['is_published']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Created'); ?></dt>
 		<dd>
 			<?php echo h($blog['Blog']['created']); ?>

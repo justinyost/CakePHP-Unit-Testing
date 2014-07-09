@@ -5,6 +5,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
 			<th><?php echo $this->Paginator->sort('text'); ?></th>
+			<th><?php echo $this->Paginator->sort('is_published'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -14,6 +15,7 @@
 		<td><?php echo h($blog['Blog']['id']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['title']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['text']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['is_published']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['created']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['modified']); ?>&nbsp;</td>
 		<td class="actions">
