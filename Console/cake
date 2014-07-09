@@ -6,5 +6,5 @@
 ################################################################################
 
 DIR="$( cd -P "$( dirname "$0" )"/.. >/dev/null 2>&1 && pwd )"
-$DIR/Vendor/pear-pear.cakephp.org/CakePHP/bin/cake -app "$DIR" "$@"
+$DIR/Vendor/cakephp/CakePHP/bin/cake -app "$DIR" "$@"
 exit
