@@ -39,4 +39,8 @@ class TagTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testNothing() {
+		$this->markTestIncomplete('TagTest does nothing');
+	}
+
 }

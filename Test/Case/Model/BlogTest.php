@@ -39,4 +39,7 @@ class BlogTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testNothing() {
+		$this->markTestIncomplete('BlogTest does nothing');
+	}
 }
