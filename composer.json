@@ -1,5 +1,5 @@
 {
-    "name": "loadsys/cakephp-unit-testing",
+    "name": "jtyost2/cakephp-unit-testing",
     "description": "CakePHP Unit Testing Sample App.",
     "license": "proprietary",
     "require": {
@@ -10,9 +10,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
-        "icecave/woodhouse": "dev-master",
         "phpdocumentor/phpdocumentor": "2.*@beta",
-        "squizlabs/php_codesniffer": "1.*"
+        "squizlabs/php_codesniffer": "1.*",
+        "loadsys/loadsys_codesniffer": ">=0.2.0"
     },
     "config": {
         "vendor-dir": "Vendor/",
