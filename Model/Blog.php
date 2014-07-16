@@ -95,4 +95,31 @@ class Blog extends AppModel {
 		)
 	);
 
+	/**
+	 * toggle the is_published field for the passed in Blog.id, if it was true
+	 * sets it to true, if it was false sets it to false
+	 *
+	 * @throws NotFoundException 				If the Blog.id record does not exist
+	 * @param  string 						$id 	primary key for the Blog record to modify
+	 * @return boolean 									true/false on success/failure
+	 */
+	public function toggleIsPublished($id) {
+		if (!$this->exists($id)) {
+			throw new NotFoundException(__('Invalid blog'));
+		}
+
+		$this->id = $id;
+		$blog = $this->find('first', array(
+			'conditions' => array(
+				'Blog.id' => $id,
+			),
+		));
+
+		$result = $this->saveField('is_published', (!$blog['Blog']['is_published']));
+
+		// return the result after double negating turns: array/true => true and
+		// false => false
+		return (!!$result);
+	}
+
 }

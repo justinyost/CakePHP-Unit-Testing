@@ -30,12 +30,84 @@ class BlogFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53bccb57-f114-474f-bbb7-5ef974524da5',
+			'id' => '53c69fd8-5840-45d9-add0-7cb374524da5',
 			'title' => 'Lorem ipsum dolor sit amet',
 			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'is_published' => 1,
-			'created' => '2014-07-09 04:55:51',
-			'modified' => '2014-07-09 04:55:51'
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-c6cc-44ec-a83b-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-1b90-4252-9a91-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-6adc-46cb-ac90-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-bb54-4d8b-8f24-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-0334-4f2f-a0a1-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-4920-46f7-9d32-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-92f4-43e8-b746-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-da70-43c6-81a4-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
+		),
+		array(
+			'id' => '53c69fd8-2124-467a-8c42-7cb374524da5',
+			'title' => 'Lorem ipsum dolor sit amet',
+			'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'is_published' => 1,
+			'created' => '2014-07-16 15:52:56',
+			'modified' => '2014-07-16 15:52:56'
 		),
 	);
 
