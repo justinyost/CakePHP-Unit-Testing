@@ -75,13 +75,14 @@ CakeTestRunner.prototype.exists = function(callback) {
 CakeTestRunner.prototype.command = function() {
   var command = 'Console/cake test ' + this.type + ' ' + this.testCase;
   if (this.vagrantHost) {
-    command = "vagrant ssh -c '/vagrant/" + command + "'";
+    command = "vagrant ssh -c '/var/www/" + command + "'";
   }
+  console.log("Running " + command);
   return command;
 };
 
 CakeTestRunner.prototype.run = function() {
-  this.clear();
+  // this.clear();
   exec(this.command(), function(err, stdout, stderr) {
     if (err) {
       console.log(err);
