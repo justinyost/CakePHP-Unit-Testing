@@ -16,6 +16,10 @@ class BlogsController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
+	public $helpers = array(
+		'Admin',
+	);
+
 /**
  * index method
  *
