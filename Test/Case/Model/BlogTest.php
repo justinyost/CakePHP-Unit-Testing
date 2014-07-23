@@ -40,6 +40,34 @@ class BlogTest extends CakeTestCase {
 	}
 
 	/**
+	 * test the toggleIsPublished when it will return false
+	 *
+	 * @return void
+	 */
+	public function testToggleIsPublishedWithValidIdReturnsFalse() {
+		$blogId = "53c69fd8-1b90-4252-9a91-7cb374524da5";
+
+		$blog = $this->Blog->find('first', array(
+			'conditions' => array(
+				'Blog.id' => $blogId,
+			),
+		));
+
+		// negate the is_published field, for what saveField will expect as
+		// an input
+		$blog['Blog']['is_published'] = !$blog['Blog']['is_published'];
+
+		$Blog = $this->getMockForModel('Blog', array('saveField'));
+		$Blog->expects($this->once())
+			->method('saveField')
+			->with('is_published', $blog['Blog']['is_published'])
+			->will($this->returnValue(false));
+
+		$result = $Blog->toggleIsPublished($blogId);
+		$this->assertEquals(false, $result);
+	}
+
+	/**
 	 * test the toggleIsPublished method with a valid id
 	 *
 	 * @dataProvider providerToggleIsPublishedWithValidId
