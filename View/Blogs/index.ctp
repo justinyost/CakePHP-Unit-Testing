@@ -15,9 +15,9 @@
 		<td><?php echo h($blog['Blog']['id']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['title']); ?>&nbsp;</td>
 		<td><?php echo h($blog['Blog']['text']); ?>&nbsp;</td>
-		<td><?php echo h($blog['Blog']['is_published']); ?>&nbsp;</td>
-		<td><?php echo h($blog['Blog']['created']); ?>&nbsp;</td>
-		<td><?php echo h($blog['Blog']['modified']); ?>&nbsp;</td>
+		<td><?php echo $this->Admin->yesNo($blog['Blog']['is_published']); ?>&nbsp;</td>
+		<td><?php echo $this->Admin->timeAgo($blog['Blog']['created']); ?>&nbsp;</td>
+		<td><?php echo $this->Admin->modified($blog['Blog']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $blog['Blog']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $blog['Blog']['id'])); ?>
