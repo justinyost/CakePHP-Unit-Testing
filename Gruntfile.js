@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   var merge = require('merge-recursive');
   var env = process.env.APP_ENV || 'dev';
+  var fs = require('fs');
 
   // Define the gruntConfig.
   var gruntConfig = {
@@ -321,11 +322,9 @@ module.exports = function(grunt) {
     if (/\.php$/.test(filepath)) {
       var CakeTestRunner = require('./Console/node/cake_test_runner'),
       file = new CakeTestRunner(filepath);
-
       if (fs.existsSync('.vagrant')) {
         file.vagrantHost = true;
       }
-
       file.exists(function() { file.run(); });
     }
   });
