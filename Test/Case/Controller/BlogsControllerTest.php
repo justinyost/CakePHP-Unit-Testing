@@ -47,7 +47,7 @@ class BlogsControllerTest extends ControllerTestCase {
 	public function testIndex() {
 		$result = $this->testAction(
 			'/blogs/index',
-			array('return' => 'vars')
+			array('return' => 'vars', 'method' => 'get')
 		);
 		$this->assertArrayHasKey('blogs', $result);
 		$this->assertGreaterThan(0, count($result['blogs']));
@@ -63,7 +63,7 @@ class BlogsControllerTest extends ControllerTestCase {
 		$blogId = '53c69fd8-5840-45d9-add0-7cb374524da5';
 		$result = $this->testAction(
 			'/blogs/view/' . $blogId,
-			array('return' => 'vars')
+			array('return' => 'vars', 'method' => 'get')
 		);
 		$this->assertArrayHasKey('blog', $result);
 		$this->assertArrayHasKey('Blog', $result['blog']);
@@ -80,7 +80,7 @@ class BlogsControllerTest extends ControllerTestCase {
 		$this->setExpectedException('NotFoundException');
 		$result = $this->testAction(
 			'/blogs/view/' . $blogId,
-			array('return' => 'vars')
+			array('return' => 'vars', 'method' => 'get')
 		);
 	}
 
@@ -227,7 +227,10 @@ class BlogsControllerTest extends ControllerTestCase {
 		);
 		$result = $this->testAction(
 			'/blogs/edit/'. $blogId,
-			array('data' => $data, 'method' => 'post')
+			array(
+				'data' => $data,
+				'method' => 'post'
+			)
 		);
 		$this->assertEquals(1, $this->Blog->find('count', array(
 			'conditions' => array(
@@ -280,7 +283,10 @@ class BlogsControllerTest extends ControllerTestCase {
 		);
 		$result = $this->testAction(
 			'/blogs/edit/'. $blogId,
-			array('data' => $data, 'method' => 'post')
+			array(
+				'data' => $data,
+				'method' => 'post'
+			)
 		);
 		$this->assertEquals(0, $this->Blog->find('count', array(
 			'conditions' => array(
@@ -299,8 +305,10 @@ class BlogsControllerTest extends ControllerTestCase {
 		// test exception returned on non-existent blog
 		$blogId = '0000';
 		$this->setExpectedException('NotFoundException');
-		$this->testAction(
-			'/blogs/edit/' . $blogId
+		$this->testAction('/blogs/edit/' . $blogId,
+			array(
+				'method' => 'get'
+			)
 		);
 	}
 
@@ -313,7 +321,10 @@ class BlogsControllerTest extends ControllerTestCase {
 		$blogId = '0000';
 		$this->setExpectedException('NotFoundException');
 		$this->testAction(
-			'/blogs/delete/' . $blogId
+			'/blogs/delete/' . $blogId,
+			array(
+				'method' => 'get'
+			)
 		);
 	}
 
@@ -327,7 +338,9 @@ class BlogsControllerTest extends ControllerTestCase {
 		$this->setExpectedException('MethodNotAllowedException');
 		$this->testAction(
 			'/blogs/delete/' . $blogId,
-			array('method' => 'get')
+			array(
+				'method' => 'get'
+			)
 		);
 	}
 
@@ -340,7 +353,9 @@ class BlogsControllerTest extends ControllerTestCase {
 		$blogId = '53c69fd8-5840-45d9-add0-7cb374524da5';
 		$this->testAction(
 			'/blogs/delete/' . $blogId,
-			array('method' => 'post')
+			array(
+				'method' => 'post'
+			)
 		);
 		$this->assertStringEndsWith("/blogs", $this->headers['Location']);
 		$this->assertEquals(array(), $this->Blog->findById($blogId));
@@ -365,7 +380,9 @@ class BlogsControllerTest extends ControllerTestCase {
 			->will($this->returnValue(false));
 		$this->testAction(
 			'/blogs/delete/' . $blogId,
-			array('method' => 'post')
+			array(
+				'method' => 'post'
+			)
 		);
 		$this->assertStringEndsWith("/blogs", $this->headers['Location']);
 		$this->assertEquals(1, $this->Blog->find('count', array(

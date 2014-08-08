@@ -9,30 +9,30 @@ App::uses('AppController', 'Controller');
  */
 class TagsController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
+	/**
+	 * Components
+	 *
+	 * @var array
+	 */
 	public $components = array('Paginator', 'Session');
 
-/**
- * index method
- *
- * @return void
- */
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
 	public function index() {
 		$this->Tag->recursive = 0;
 		$this->set('tags', $this->Paginator->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function view($id = null) {
 		if (!$this->Tag->exists($id)) {
 			throw new NotFoundException(__('Invalid tag'));
@@ -41,11 +41,11 @@ class TagsController extends AppController {
 		$this->set('tag', $this->Tag->find('first', $options));
 	}
 
-/**
- * add method
- *
- * @return void
- */
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Tag->create();
@@ -60,13 +60,13 @@ class TagsController extends AppController {
 		$this->set(compact('blogs'));
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function edit($id = null) {
 		if (!$this->Tag->exists($id)) {
 			throw new NotFoundException(__('Invalid tag'));
@@ -86,13 +86,13 @@ class TagsController extends AppController {
 		$this->set(compact('blogs'));
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function delete($id = null) {
 		$this->Tag->id = $id;
 		if (!$this->Tag->exists()) {
