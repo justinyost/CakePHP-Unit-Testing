@@ -9,34 +9,38 @@ App::uses('AppController', 'Controller');
  */
 class BlogsController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
+	/**
+	 * Components
+	 *
+	 * @var array
+	 */
 	public $components = array('Paginator', 'Session');
 
+	/**
+	 * array of helpers used in this controller
+	 * @var array
+	 */
 	public $helpers = array(
 		'Admin',
 	);
 
-/**
- * index method
- *
- * @return void
- */
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
 	public function index() {
 		$this->Blog->recursive = 0;
 		$this->set('blogs', $this->Paginator->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function view($id = null) {
 		if (!$this->Blog->exists($id)) {
 			throw new NotFoundException(__('Invalid blog'));
@@ -45,11 +49,11 @@ class BlogsController extends AppController {
 		$this->set('blog', $this->Blog->find('first', $options));
 	}
 
-/**
- * add method
- *
- * @return void
- */
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Blog->create();
@@ -64,13 +68,13 @@ class BlogsController extends AppController {
 		$this->set(compact('tags'));
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function edit($id = null) {
 		if (!$this->Blog->exists($id)) {
 			throw new NotFoundException(__('Invalid blog'));
@@ -90,13 +94,13 @@ class BlogsController extends AppController {
 		$this->set(compact('tags'));
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function delete($id = null) {
 		$this->Blog->id = $id;
 		if (!$this->Blog->exists()) {
