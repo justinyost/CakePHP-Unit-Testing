@@ -247,6 +247,8 @@ class AppModel extends Model {
 	 * @return	boolean			Returns true if there are no existing records with a matching $check field.
 	 */
 	public function validate_unique($check, $excludeExisting = false) {
+		debug($check);
+
 		if (!empty($this->data[$this->alias][$this->primaryKey]) && $excludeExisting) {
 			$check[] = array(
 				'NOT' => array(
