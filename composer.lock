@@ -1,12 +1,13 @@
 {
     "_readme": [
-        "This file locks the dependencies of your project to a known state",
-	"Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+	"This file locks the dependencies of your project to a known state",
+	"Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+	"This file is @generated automatically"
     ],
-    "hash": "8a26f557fc9b4a8dfb82f4c6ef04a381",
+    "hash": "8af3518549bca19d210bd6e4b461a45f",
     "packages": [
-        {
-            "name": "cakedc/migrations",
+	{
+	    "name": "cakedc/migrations",
             "version": "2.2.3",
             "source": {
                 "type": "git",
@@ -41,22 +42,22 @@
                 "migrations"
             ],
             "time": "2013-10-21 10:45:27"
-        },
-        {
-            "name": "cakephp/cakephp",
-	    "version": "2.4.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cakephp/cakephp.git",
-		"reference": "5fe5e9b6972dd443ca0292e73ebe516f21fcfe1c"
-            },
-            "dist": {
-                "type": "zip",
-		"url": "https://api.github.com/repos/cakephp/cakephp/zipball/5fe5e9b6972dd443ca0292e73ebe516f21fcfe1c",
-		"reference": "5fe5e9b6972dd443ca0292e73ebe516f21fcfe1c",
-                "shasum": ""
-            },
-            "require": {
+	},
+	{
+	    "name": "cakephp/cakephp",
+	    "version": "2.5.3",
+	    "source": {
+		"type": "git",
+		"url": "https://github.com/cakephp/cakephp.git",
+		"reference": "ac9af7e3269f956b5a030a1bb6e6b95325af8b9c"
+	    },
+	    "dist": {
+		"type": "zip",
+		"url": "https://api.github.com/repos/cakephp/cakephp/zipball/ac9af7e3269f956b5a030a1bb6e6b95325af8b9c",
+		"reference": "ac9af7e3269f956b5a030a1bb6e6b95325af8b9c",
+		"shasum": ""
+	    },
+	    "require": {
                 "ext-mcrypt": "*",
                 "php": ">=5.2.8"
             },
@@ -80,13 +81,13 @@
             ],
             "description": "The CakePHP framework",
             "homepage": "http://cakephp.org",
-            "keywords": [
-                "framework"
-            ],
-	    "time": "2014-05-18 02:31:48"
-        },
-        {
-            "name": "cakephp/debug_kit",
+	    "keywords": [
+		"framework"
+	    ],
+	    "time": "2014-07-21 02:20:47"
+	},
+	{
+	    "name": "cakephp/debug_kit",
 	    "version": "2.2.4",
             "source": {
                 "type": "git",
@@ -3434,6 +3435,7 @@
     "stability-flags": {
         "phpdocumentor/phpdocumentor": 10
     },
+    "prefer-stable": false,
     "platform": [],
     "platform-dev": []
 }
