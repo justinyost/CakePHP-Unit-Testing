@@ -57,7 +57,7 @@ class BalanceCalculationTest extends CakeTestCase {
 				null,
 				100.00,
 			),
-			'Only a base price without a decimal' => array(
+			'Only a base price without a decimal, should return decimal stuff' => array(
 				100,
 				false,
 				null,
@@ -122,6 +122,28 @@ class BalanceCalculationTest extends CakeTestCase {
 				true,
 				5,
 				115.00,
+			),
+			'Base Price with an international fee set but no boolean' => array(
+				100,
+				false,
+				null,
+				null,
+				false,
+				null,
+				false,
+				5,
+				100.00,
+			),
+			'Base Price with a % coupon and an international fee' => array(
+				100,
+				true,
+				10,
+				'% off',
+				false,
+				null,
+				true,
+				5,
+				95.00,
 			),
 		);
 	}
