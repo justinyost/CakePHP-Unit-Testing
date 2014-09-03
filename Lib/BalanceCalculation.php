@@ -1,6 +1,9 @@
 <?php
 /**
  * Total = (BasePrice  - Coupon Discount) + CancelationInsuranceCost + International Fee
+ * CancelationInsuranceCost = (BasePrice * CancellationInsurancePercent)
+ * CouponDiscountDollar = BasePrice - CouponDollarValue
+ * CouponDiscoutPercentage = BasePrice - (CouponValuePercent * BasePrice)
  */
 class BalanceCalculation {
 
