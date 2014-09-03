@@ -17,7 +17,7 @@ class BalanceCalculation {
 
 		if ($cancelationInsuranceBool) {
 			$insuranceCost = $basePrice * $cancelationInsurancePercent;
-			$depositAmount = $depositAmount + $insuranceCost;
+			$runningTotal = $runningTotal + $insuranceCost;
 		} else {
 		}
 
