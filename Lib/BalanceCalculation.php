@@ -18,24 +18,26 @@ class BalanceCalculation {
 	 * @return double
 	 */
 	public static function returnBalance($basePrice, $couponBool, $couponValue, $couponType, $cancelationInsuranceBool, $cancelationInsurancePercent, $internationalFeeBool, $internationalFee) {
+
+		// the running balance total
 		$runningTotal = 0;
 
-		$runningTotal = $basePrice;
+		$runningTotal = floatval($basePrice);
 
 		if($couponType == '$ off' && $couponBool) {
-			$runningTotal = floatval($runningTotal) - floatval(abs($couponValue));
+			$runningTotal = $runningTotal - floatval(abs($couponValue));
 		} else if ($couponType == '% off' && $couponBool) {
-			$runningTotal = floatval($runningTotal) - floatval(abs(($runningTotal * ($couponValue/100))));
+			$runningTotal = $runningTotal - floatval(abs(($runningTotal * ($couponValue/100))));
 		}
 
 		if ($cancelationInsuranceBool) {
-			$insuranceCost = $basePrice * $cancelationInsurancePercent;
-			$runningTotal = $runningTotal + $insuranceCost;
+			$insuranceCost = floatval($basePrice) * $cancelationInsurancePercent;
+			$runningTotal = $runningTotal + floatval($insuranceCost);
 		} else {
 		}
 
 		if ($internationalFeeBool) {
-			$runningTotal = $runningTotal + $internationalFee;
+			$runningTotal = $runningTotal + floatval($internationalFee);
 		} else {
 		}
 
