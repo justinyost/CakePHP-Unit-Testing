@@ -25,15 +25,15 @@ class BalanceCalculationTest extends CakeTestCase {
 	 * test the returnBalance method
 	 *
 	 * @dataProvider providerReturnBalance
-	 * @param  [type] $basePrice                   [description]
-	 * @param  [type] $couponBool                  [description]
-	 * @param  [type] $couponValue                 [description]
-	 * @param  [type] $couponType                  [description]
-	 * @param  [type] $cancelationInsuranceBool    [description]
-	 * @param  [type] $cancelationInsurancePercent [description]
-	 * @param  [type] $internationalFeeBool        [description]
-	 * @param  [type] $internationalFee            [description]
-	 * @param  [type] $expectedOutput              [description]
+	 * @param  double $basePrice                   the base price to calculate the balance from
+	 * @param  boolean $couponBool                 if the coupon is to be applied
+	 * @param  int $couponValue                    the value of the coupon, an int that is applied as a total dollar amount or a percentage
+	 * @param  string $couponType                  the string defining the coupon type ($/% off)
+	 * @param  boolean $cancelationInsuranceBool   if the cancellation insurance is to be applied
+	 * @param  double $cancelationInsurancePercent the percentage fee for cancellation insurance
+	 * @param  boolean $internationalFeeBool       if the international fee is to be applied
+	 * @param  double $internationalFee            the international fee amount (simply added)
+	 * @param  double $expectedOutput              the expected output
 	 * @return void
 	 */
 	public function testReturnBalance($basePrice, $couponBool, $couponValue, $couponType, $cancelationInsuranceBool, $cancelationInsurancePercent, $internationalFeeBool, $internationalFee, $expectedOutput) {
