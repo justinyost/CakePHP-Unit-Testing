@@ -4,7 +4,12 @@ language: php
 # PHP versions to test against
 php:
   - 5.4
+  - 5.5
+  - 5.6
 
+# Node version, if you have JS to test.
+#node_js:
+#  - "0.10"
 
 # Environment Variables to set
 env:
@@ -29,21 +34,21 @@ before_install:
 # Install Software/Dependencies Needed
 install:
   - git submodule update --init --recursive
+  - composer config -g github-oauth.github.com $GITHUB_TOKEN
   - composer install --dev --no-interaction
-  - ./bin/pear-install-deps
   - ./bin/set-owner
   - ./bin/set-configs "$APP_ENV"
+  - ./bin/writedirs
 
 # Before the Test Script Runs
 before_script:
   - phpenv rehash
   - mysql -e 'DROP DATABASE IF EXISTS `travis_app`; CREATE DATABASE `travis_app`;'
-  - ./bin/writedirs
 
 # Test Script Call
 script:
-  - sh -c "./bin/run-codesniffer y;"
-  - ./bin/run-tests
+  - ./bin/run-codesniffer y
+  - ./bin/run-tests All --stderr
 
 # After a Successful Build
 after_success:
@@ -57,9 +62,6 @@ after_script:
 # Notifications Settings
 notifications:
   email: false
-#  webhooks:
-#    urls:
-#      - http://wemux.loadsysdev.com/slack/travis
-#    on_failure: always
-#    on_success: always
-#    on_start: false
+
+# Github Private Key for an account that can read your private repos
+#source_key:
