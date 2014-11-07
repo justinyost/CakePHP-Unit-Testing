@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/jtyost2/CakePHP-Unit-Testing.svg?branch=master)](https://travis-ci.org/jtyost2/CakePHP-Unit-Testing)
 
+[![Code Climate](https://codeclimate.com/github/jtyost2/CakePHP-Unit-Testing/badges/gpa.svg)](https://codeclimate.com/github/jtyost2/CakePHP-Unit-Testing)
+
 Sample Unit Testing Application
 
 
