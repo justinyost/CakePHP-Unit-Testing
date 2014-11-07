@@ -4,27 +4,9 @@ App::uses('BalanceCalculation', 'Lib');
 class BalanceCalculationTest extends CakeTestCase {
 
 	/**
-	 * setUp method
+	 * test the balance method
 	 *
-	 * @return void
-	 */
-	public function setUp() {
-		parent::setUp();
-	}
-
-	/**
-	 * tearDown method
-	 *
-	 * @return void
-	 */
-	public function tearDown() {
-		parent::tearDown();
-	}
-
-	/**
-	 * test the returnBalance method
-	 *
-	 * @dataProvider providerReturnBalance
+	 * @dataProvider providerBalance
 	 * @param  double $basePrice                   the base price to calculate the balance from
 	 * @param  boolean $couponBool                 if the coupon is to be applied
 	 * @param  int $couponValue                    the value of the coupon, an int that is applied as a total dollar amount or a percentage
@@ -36,15 +18,32 @@ class BalanceCalculationTest extends CakeTestCase {
 	 * @param  double $expectedOutput              the expected output
 	 * @return void
 	 */
-	public function testReturnBalance($basePrice, $couponBool, $couponValue, $couponType, $cancelationInsuranceBool, $cancelationInsurancePercent, $internationalFeeBool, $internationalFee, $expectedOutput) {
-		$this->assertEquals($expectedOutput, BalanceCalculation::returnBalance($basePrice, $couponBool, $couponValue, $couponType, $cancelationInsuranceBool, $cancelationInsurancePercent, $internationalFeeBool, $internationalFee));
+	public function testBalance($basePrice, $couponBool, $couponValue, $couponType, $cancelationInsuranceBool, $cancelationInsurancePercent, $internationalFeeBool, $internationalFee, $expectedOutput) {
+		$BalanceCalculation = new BalanceCalculation($basePrice);
+		$result = $BalanceCalculation
+			->setCoupon(array(
+				'couponBool' => $couponBool,
+				'couponValue' => $couponValue,
+				'couponType' => $couponType,
+			))
+			->setCancelationInsurance(
+				$cancelationInsuranceBool,
+				$cancelationInsurancePercent
+			)
+			->setInternationalFee(
+				$internationalFeeBool,
+				$internationalFee
+			)
+			->call();
+
+		$this->assertEquals($expectedOutput, $result);
 	}
 
 	/**
 	 * dataProvider for testReturnBalance
 	 * @return array test data input/outputs for testReturnBalance method
 	 */
-	public function providerReturnBalance() {
+	public function providerBalance() {
 		return array(
 			'Only a simple base price' => array(
 				100.00,

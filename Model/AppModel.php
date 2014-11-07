@@ -278,4 +278,5 @@ class AppModel extends Model {
 		list($field, $value) = each($check);
 		return is_null($value);
 	}
+
 }
