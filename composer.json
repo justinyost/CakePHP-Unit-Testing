@@ -1,34 +1,37 @@
 {
-    "name": "jtyost2/cakephp-unit-testing",
-    "description": "CakePHP Unit Testing Sample App.",
-    "license": "MIT",
-    "authors": [
-      {
-	"name": "Justin Yost",
-	"email": "justin.yost@yostivanich.com",
-	"homepage": "http://www.yostivanich.com",
-	"role": "Developer"
-      }
-    ],
-    "support": {
-	"email": "justin.yost@yostivnaich.com",
-	"issues": "https://github.com/jtyost2/CakePHP-Unit-Testing/issues",
-	"source": "https://github.com/jtyost2/CakePHP-Unit-Testing"
-    },
-    "require": {
-	"cakephp/cakephp": "2.*",
-	"cakephp/debug_kit": "2.2.*",
-	"cakedc/migrations": "2.2.*",
-	"loadsys/cakephp-shell-scripts": ">=2.0.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "phpdocumentor/phpdocumentor": "2.*@beta",
-        "squizlabs/php_codesniffer": "1.*",
-        "loadsys/loadsys_codesniffer": ">=0.2.0"
-    },
-    "config": {
-        "vendor-dir": "Vendor/",
-        "bin-dir": "bin"
+  "name": "jtyost2/cakephp-unit-testing",
+  "description": "CakePHP Unit Testing Sample App.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Justin Yost",
+      "email": "justin.yost@yostivanich.com",
+      "homepage": "http://www.yostivanich.com",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "email": "justin.yost@yostivnaich.com",
+    "issues": "https://github.com/jtyost2/CakePHP-Unit-Testing/issues",
+    "source": "https://github.com/jtyost2/CakePHP-Unit-Testing"
+  },
+  "require": {
+    "php": ">=5.4.19",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "cakephp/cakephp": "2.5.*",
+    "cakephp/debug_kit": "2.2.*",
+    "cakedc/migrations": "2.3.*",
+    "loadsys/cakephp-shell-scripts": "2.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*",
+    "phpdocumentor/phpdocumentor": "2.*@beta",
+    "squizlabs/php_codesniffer": "1.*",
+    "loadsys/loadsys_codesniffer": ">=0.2.0"
+  },
+  "config": {
+    "vendor-dir": "Vendor/",
+    "bin-dir": "bin"
+  }
 }
