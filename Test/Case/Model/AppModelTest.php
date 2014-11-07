@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('AttachmentBehavior', 'Uploader.Model/Behavior');
 
 /**
  * AppModel Test Case
@@ -18,9 +19,6 @@ class TestAppModel extends AppModel {
 	public function constructOrderProperty() {
 		return parent::constructOrderProperty();
 	}
-	public function setUploadableS3Key() {
-		return parent::setUploadableS3Key();
-	}
 }
 
 /**
@@ -35,7 +33,7 @@ class AppModelTest extends CakeTestCase {
 	 * @var array
 	 */
 	public $fixtures = array(
-		'app.blog',
+		'app.app_model',
 	);
 
 	/**
@@ -45,7 +43,7 @@ class AppModelTest extends CakeTestCase {
 	 */
 	public function setUp() {
 		parent::setUp();
-		$this->Blog = ClassRegistry::init('Blog');
+		$this->AppModel = ClassRegistry::init('AppModel');
 	}
 
 	/**
@@ -54,7 +52,7 @@ class AppModelTest extends CakeTestCase {
 	 * @return void
 	 */
 	public function tearDown() {
-		unset($this->Blog);
+		unset($this->AppModel);
 		parent::tearDown();
 	}
 
@@ -67,14 +65,14 @@ class AppModelTest extends CakeTestCase {
 	 */
 	public function testConstructVirtualFields() {
 		$expected = array(
-			'title_text' => 'CONCAT(`Bloggy`.`title`, " ", `Bloggy`.`text`)',
+			'name' => 'CONCAT(`Person`.`firstname`, " ", `Person`.`lastname`)',
 		);
 
 		$Model = new TestAppModel();
-		$Model->name = 'Blog';
-		$Model->alias = 'Bloggy';
+		$Model->name = 'AppModel';
+		$Model->alias = 'Person';
 		$Model->virtualFields = array(
-			'title_text' => 'CONCAT(`Blog`.`title`, " ", `Blog`.`text`)',
+			'name' => 'CONCAT(`AppModel`.`firstname`, " ", `AppModel`.`lastname`)',
 		);
 
 		$Model->constructVirtualFields();
@@ -339,6 +337,7 @@ class AppModelTest extends CakeTestCase {
 			)
 		);
 		$check = array('email' => 'test@localhost.com');
+
 		$this->assertTrue($this->AppModel->validateUnique($check, true));
 		$this->assertFalse($this->AppModel->validateUnique($check, false));
 	}
@@ -389,6 +388,27 @@ class AppModelTest extends CakeTestCase {
 	 * @return void
 	 */
 	public function testValidateNull($check, $expected, $msg = '') {
-		$this->assertEquals($expected, $this->Blog->validateNull($check), $msg);
+		$this->assertEquals($expected, $this->AppModel->validateNull($check), $msg);
 	}
+
+	/**
+	 * test emailFactory without passing a config
+	 *
+	 * @return void
+	 */
+	public function testEmailFactoryNoConfigPassed() {
+		$Model = new TestAppModel();
+		$this->assertInstanceOf("AppEmail", $Model->emailFactory());
+	}
+
+	/**
+	 * test emailFactory with passing a config
+	 *
+	 * @return void
+	 */
+	public function testEmailFactoryConfigPassed() {
+		$Model = new TestAppModel();
+		$this->assertInstanceOf("AppEmail", $Model->emailFactory('default'));
+	}
+
 }

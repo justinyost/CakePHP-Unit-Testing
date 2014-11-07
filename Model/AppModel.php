@@ -22,14 +22,13 @@
 
 App::uses('Model', 'Model');
 App::uses('Validation', 'Utility');
+App::uses('AppEmail', 'Lib/Network/Email');
 
 /**
  * Application model for Cake.
  *
  * Add your application-wide methods in the class below, your models
  * will inherit them.
- *
- * @package       app.Model
  */
 class AppModel extends Model {
 
@@ -43,6 +42,14 @@ class AppModel extends Model {
 	);
 
 	/**
+	 * App-wide default recursive level, use either contain or recursive in a call
+	 * to change
+	 *
+	 * @var integer
+	 */
+	public $recursive = -1;
+
+	/**
 	 * __construct
 	 *
 	 * Sets virtualFields and default sort order dynamically to match the
@@ -54,12 +61,14 @@ class AppModel extends Model {
 	 *
 	 * @codeCoverageIgnore	Child calls all tested independently.
 	 * @access	public
-	 * @params	See: http://api.cakephp.org/2.3/source-class-Model.html#641-750
+	 * @param bool|int|string|array $id Set this ID for this model on startup,
+	 * can also be an array of options, see above.
+	 * @param string $table Name of database table to use.
+	 * @param string $ds DataSource connection name.
 	 * @return	void
 	 */
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
-
 		$this->constructVirtualFields();
 		$this->constructOrderProperty();
 		$this->constructValidate();
@@ -254,6 +263,7 @@ class AppModel extends Model {
 				)
 			);
 		}
+
 		$options = array(
 			'conditions' => $check,
 			'recursive' => -1,
@@ -274,6 +284,18 @@ class AppModel extends Model {
 	public function validateNull($check) {
 		list($field, $value) = each($check);
 		return is_null($value);
+	}
+
+	/**
+	 * Instantiates and returns an instance of the application's email
+	 * handler class, AppEmail.
+	 *
+	 * @access	public
+	 * @param	string	$config	The name of the CakeEmail config class to use.
+	 * @return	AppEmail		Instance of the subclassed CakeEmail class.
+	 */
+	public function emailFactory($config = null) {
+		return new AppEmail($config);
 	}
 
 }
