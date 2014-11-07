@@ -332,18 +332,15 @@ class AppModelTest extends CakeTestCase {
 	 * @return void
 	 */
 	public function testValidateUnique() {
-		$this->markTestIncomplete('testValidateUnique incomplete');
-
-		$this->Blog->data = array(
-			'Blog' => array(  // This overlaps an existing Blog fixture record.
-				'id' => '53c69fd8-2124-467a-8c42-7cb374524da5',
-				'title' => 'This is a unique title for a blog post',
+		$this->AppModel->data = array(
+			'AppModel' => array(  // This overlaps an existing AppModel fixture record.
+				'id' => '52e00e3e-0210-41ce-b2ec-3e95b368309d',
+				'username' => 'test@localhost.com',
 			)
 		);
-		$check = array('title' => 'This is a unique title for a blog post');
-
-		$this->assertTrue($this->Blog->validateUnique($check, true));
-		$this->assertFalse($this->Blog->validateUnique($check, false));
+		$check = array('email' => 'test@localhost.com');
+		$this->assertTrue($this->AppModel->validateUnique($check, true));
+		$this->assertFalse($this->AppModel->validateUnique($check, false));
 	}
 
 	/**

@@ -233,7 +233,7 @@ class AppModel extends Model {
 	}
 
 	/**
-	 * validate_unique
+	 * validateUnique
 	 *
 	 * Verifies that there are no other records in the DB with a matching
 	 * value for the field specified in $check. Adds the `NOT [id => x]` element
@@ -246,9 +246,7 @@ class AppModel extends Model {
 	 * @param	boolean	$excludeExisting	If true, and if $this->data[Model][id] is present, will exclude that existing record from the check. When this is false, attempting to update an existing record will cause this method to fail (because the existing copy of the record with the matching field IS in the database.)
 	 * @return	boolean			Returns true if there are no existing records with a matching $check field.
 	 */
-	public function validate_unique($check, $excludeExisting = false) {
-		debug($check);
-
+	public function validateUnique($check, $excludeExisting = false) {
 		if (!empty($this->data[$this->alias][$this->primaryKey]) && $excludeExisting) {
 			$check[] = array(
 				'NOT' => array(
@@ -256,7 +254,6 @@ class AppModel extends Model {
 				)
 			);
 		}
-
 		$options = array(
 			'conditions' => $check,
 			'recursive' => -1,
