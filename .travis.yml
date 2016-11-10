@@ -15,8 +15,6 @@ php:
 env:
   global:
     - APP_ENV=travis
-    # Contains a $GITHUB_TOKEN env var for use with composer to avoid API limits.
-    - secure: "GskNShxJTSdczbddmPPIzKivDWn/YuaMFgr5UPSumPDirQQdbesRh/tQZNGiIaROXXnDs45wJCWT2ra8XdYBZouISXOoOZARQgz9JqUHAbkgtCbxa4qhp3ZwDymJMFd5eGvM99r9OCoSh2us+E2fhBb1+P5kvS6laB5TKYmwAX0="
 
 # Services to Enable
 services:
@@ -30,12 +28,12 @@ branches:
 
 # Before Installing Software/Dependencies Needed
 before_install:
+  - composer self-update
 
 # Install Software/Dependencies Needed
 install:
   - git submodule update --init --recursive
-  - composer config -g github-oauth.github.com $GITHUB_TOKEN
-  - composer install --dev --no-interaction
+  - composer install --optimize-autoloader --no-interaction
   - ./bin/set-owner
   - ./bin/set-configs "$APP_ENV"
   - ./bin/writedirs
@@ -62,6 +60,3 @@ after_script:
 # Notifications Settings
 notifications:
   email: false
-
-# Github Private Key for an account that can read your private repos
-#source_key:
